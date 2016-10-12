@@ -69,9 +69,9 @@ describe("createPostForm", function() {
       expect(post).to.have.property('body');
       done();
     });
-    $('.input-class-name').val("title");
-    $('.input-class-name').val("body");
-    $("form-button").click();
+    $('.title').val("title");
+    $('.button').val("body");
+    $(".submit-button").click();
 
   });
 });

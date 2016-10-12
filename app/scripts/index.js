@@ -2,12 +2,19 @@ var $ = require('jquery');
 var models = require('./models');
 var views = require('./views');
 
-$(function(){
+$(function() {
   var view = new views.PostView();
 
-  $(document).on('posts:fetched', function(event, posts){
+  $(document).on('posts:fetched', function(event, posts) {
     view.showPosts(posts);
   });
 
   models.Post.fetch();
 });
+
+$('submit-button').on("click", function() {
+  $(document).trigger('create:post', [{
+    title: "Cool",
+    body: "Cool"
+  }])
+})
