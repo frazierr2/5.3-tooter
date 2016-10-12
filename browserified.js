@@ -46,7 +46,7 @@ $('body').append(template());
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<form action=\"\" method=\"post\">\n  <label for=\"forTitleOfBlog\">Title</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <label for=\"forBlog\">Blog Content</label>\n  <textarea name=\"Blog\">Add your Blog Post here</textarea>\n  <button class=\"submit-button\" name=\"button\">Submit</button>\n</form>\n";
+    return "<form action=\"\" method=\"post\">\n  <label for=\"forTitleOfBlog\">Title</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <label for=\"forBlog\">Blog Content</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <button class=\"submit-button\" name=\"button\">Submit</button>\n</form>\n";
 },"useData":true});
 
 },{"hbsfy/runtime":60}],4:[function(require,module,exports){
@@ -18957,7 +18957,7 @@ describe("createPostForm", function() {
       done();
     });
     $('.title').val("title");
-    $('.button').val("body");
+    $('.body').val("body");
     $(".submit-button").click();
 
   });

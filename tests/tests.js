@@ -70,7 +70,7 @@ describe("createPostForm", function() {
       done();
     });
     $('.title').val("title");
-    $('.button').val("body");
+    $('.body').val("body");
     $(".submit-button").click();
 
   });
