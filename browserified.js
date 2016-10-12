@@ -2,14 +2,14 @@
 "use strict";
 var $ = require('jquery');
 
-function Post(){
+function Post() {
 
 }
 
-Post.fetch = function(){
+Post.fetch = function() {
   var promise = $.ajax('http://tiny-lasagna-server.herokuapp.com/collections/posts');
 
-  promise.then(function(posts){
+  promise.then(function(posts) {
     $(document).trigger('posts:fetched', [posts]);
   });
 
@@ -26,6 +26,7 @@ var $ = require('jquery');
 var template = require('../templates/application.hbs');
 
 function PostView() {
+  $('body').append(template());
   $('body').append('<ul class="posts">');
 }
 
@@ -39,14 +40,12 @@ module.exports = {
   'PostView': PostView
 };
 
-$('body').append(template());
-
 },{"../templates/application.hbs":3,"jquery":62}],3:[function(require,module,exports){
 "use strict";
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<form action=\"\" method=\"post\">\n  <label for=\"forTitleOfBlog\">Title</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <label for=\"forBlog\">Blog Content</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <button class=\"submit-button\" name=\"button\">Submit</button>\n</form>\n";
+    return "<form class=\"form\" action=\"\" method=\"post\">\n  <label for=\"forTitleOfBlog\">Title</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <label for=\"forBlog\">Blog Content</label>\n  <input  class=\"title\"type=\"text\" name=\"Title\">\n  <button class=\"submit-button\" name=\"button\" type=\"submit\">Submit</button>\n</form>\n";
 },"useData":true});
 
 },{"hbsfy/runtime":60}],4:[function(require,module,exports){
@@ -18958,8 +18957,8 @@ describe("createPostForm", function() {
     });
     $('.title').val("title");
     $('.body').val("body");
-    $(".submit-button").click();
-
+    // $(".submit-button").click();
+    console.warn($(".submit-button"));
   });
 });
 

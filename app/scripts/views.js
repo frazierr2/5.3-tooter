@@ -2,6 +2,7 @@ var $ = require('jquery');
 var template = require('../templates/application.hbs');
 
 function PostView() {
+  $('body').append(template());
   $('body').append('<ul class="posts">');
 }
 
@@ -14,5 +15,3 @@ PostView.prototype.showPosts = function(posts) {
 module.exports = {
   'PostView': PostView
 };
-
-$('body').append(template());

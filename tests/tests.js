@@ -71,7 +71,7 @@ describe("createPostForm", function() {
     });
     $('.title').val("title");
     $('.body').val("body");
-    $(".submit-button").click();
-
+    // $(".submit-button").click();
+    console.warn($(".submit-button"));
   });
 });

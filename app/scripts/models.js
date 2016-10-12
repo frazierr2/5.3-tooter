@@ -1,13 +1,13 @@
 var $ = require('jquery');
 
-function Post(){
+function Post() {
 
 }
 
-Post.fetch = function(){
+Post.fetch = function() {
   var promise = $.ajax('http://tiny-lasagna-server.herokuapp.com/collections/posts');
 
-  promise.then(function(posts){
+  promise.then(function(posts) {
     $(document).trigger('posts:fetched', [posts]);
   });
 
@@ -16,4 +16,5 @@ Post.fetch = function(){
 
 module.exports = {
   Post: Post
+};
 };
