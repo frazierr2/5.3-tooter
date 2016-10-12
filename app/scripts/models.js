@@ -17,4 +17,3 @@ Post.fetch = function() {
 module.exports = {
   Post: Post
 };
-};
